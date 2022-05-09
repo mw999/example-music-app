@@ -1,0 +1,32 @@
+{
+  "name": "ui",
+  "description": "Music UI using React, graphql and apollo.",
+  "version": "1.0.0",
+  "private": true,
+  "author": "Matthew Williams <mw999@hotmail.co.uk>",
+  "license": "ISC",
+  "scripts": {
+    "start": "vite",
+    "build": "vite build",
+    "test": "vitest",
+    "test:ci": "vitest run"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.6.2",
+    "graphql": "^16.4.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^6.3.0",
+    "styled-components": "^5.3.5"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.2.0",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "@vitejs/plugin-react": "^1.3.0",
+    "jsdom": "^19.0.0",
+    "vite": "^2.9.7",
+    "vitest": "^0.12.0"
+  }
+}

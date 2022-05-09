@@ -1,0 +1,29 @@
+{
+  "name": "api",
+  "description": "Music API using Node, graphql and apollo.",
+  "version": "1.0.0",
+  "private": true,
+  "author": "Matthew Williams <mw999@hotmail.co.uk>",
+  "license": "ISC",
+  "scripts": {
+    "start": "node src/index.js",
+    "db:migrate": "knex migrate:latest --knexfile ./src/db/knexfile.js",
+    "db:seed": "npx knex seed:run --knexfile ./src/db/knexfile.js",
+    "test": "jest --watch",
+    "test:ci": "npm run test:setup-db && jest --silent --bail --ci",
+    "test:setup-db": "NODE_ENV='test' node ./jest/jest.migrate.js"
+  },
+  "dependencies": {
+    "apollo-server": "^3.7.0",
+    "dayjs": "^1.11.2",
+    "dotenv": "^16.0.0",
+    "faker": "^5.5.3",
+    "graphql": "^16.4.0",
+    "knex": "^2.0.0",
+    "mysql2": "^2.3.3",
+    "objection": "^3.0.1"
+  },
+  "devDependencies": {
+    "jest": "^28.1.0"
+  }
+}
