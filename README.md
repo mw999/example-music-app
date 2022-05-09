@@ -46,3 +46,9 @@ The workflow performs the following:
 - Installs dependencies
 - Lints all code using ESLint
 - Runs tests in every package
+
+Examples CI runs can be found below:
+
+- A CI run that passes: https://github.com/mw999/artlist-assessment/runs/6355469467
+- A CI run that fails because of linting: https://github.com/mw999/artlist-assessment/actions/runs/2295415302
+- A CI run that fails because of tests: https://github.com/mw999/artlist-assessment/runs/6355596608
