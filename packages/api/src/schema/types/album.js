@@ -30,6 +30,7 @@ const resolvers = {
 
   Query: {
     album: (_, params) => {
+      // This is a change that doesn't break ci.
       return Album.query().findById(params.id).throwIfNotFound();
     },
     albums: () => Album.query().orderBy("created_at", "DESC"),
