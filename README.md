@@ -1,4 +1,4 @@
-# graphql-training
+# Artlist Assessment
 
 ## Setup
 
@@ -15,6 +15,26 @@ Each package handles it's own builds, development servers and tests. With the ro
 [Husky] is used with [lint-staged](https://github.com/okonet/lint-staged) to run [ESLint](https://eslint.org/) and [Prettier](https://prettier.io/) on pre commit, to ensure new code is styled correctly and valid.
 
 More information of per application setup can be found in the [UI](/packages/ui/README.md) and [API](/packages/api/README.md) readmes,
+
+## Assessment Criteria
+
+This application completes the following user stories:
+
+- As a user, I can create an empty album with a name property.
+- As a user, I can add new music tracks to an existing album with a track name, artist and genre.
+- As a user, I can view all albums and music tracks which have been created.
+- As a user, I can delete an entire album and all of its music tracks in one action.
+- As a user, I can update the track name, artist and genre of an existing track.
+- As a user, I can delete one or many tracks from an album in one action.
+
+It also completes the following bonus items:
+
+- Containerisation (docker-compose): The API package can be ran within a docker container using docker-compose.
+- A relational database - A MYSQl database is used within the container above and connects to the API.
+- Tests (unit and/or integration) - The UI is unit tested using React Testing Library, and the API includes integrations tests that tests the API using a real database.
+- Documentation of API - Apollo Server ships with built in documentation for its GraphQL schema. This was a core reason for choosing it.
+- Thoughtful project structure and code patterns
+- Good developer onboarding steps in the readme file
 
 ## CI
 
