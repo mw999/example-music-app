@@ -43,6 +43,8 @@ const resolvers = {
       context: context,
       params: { id: number }
     ): QueryBuilder<Album, Album> => {
+      console.log(thisVariableDoesNotExist);
+      
       return Album.query().findById(params.id).throwIfNotFound();
     },
     albums: (): QueryBuilder<Album, Album[]> => {
