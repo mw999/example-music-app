@@ -1,0 +1,53 @@
+name: Pull Requests
+
+on:
+  pull_request:
+    types:
+      - opened
+      - ready_for_review
+      - synchronize
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    if: ${{ !github.event.pull_request.draft }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: npm run setup
+
+      - name: Link internal packages
+        run: npm run link
+
+      - name: Lint packages
+        run: npm run lint
+  test:
+    needs: [lint]
+    runs-on: ubuntu-latest
+
+    services:
+      mysql:
+        image: mysql:5.7
+        env:
+          MYSQL_ALLOW_EMPTY_PASSWORD: yes
+          MYSQL_DATABASE: test_database
+        ports:
+          - 3306
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Link internal packages
+        run: npm run link
+
+      - name: Execute tests
+        env:
+          TEST_DATABASE_HOST: 127.0.0.1
+          TEST_DATABASE_USER: root
+          TEST_DATABASE_PORT: ${{ job.services.mysql.ports[3306] }}
+          TEST_DATABASE_NAME: test_database
+        run: npm run test:ci
