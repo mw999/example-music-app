@@ -2,8 +2,6 @@ const Knex = require("knex");
 
 require("dotenv").config();
 
-const knexfile = require("../src/db/knexfile");
-
 const migrateDatabase = async () => {
   const knex = Knex({
     timezone: "+00:00",
