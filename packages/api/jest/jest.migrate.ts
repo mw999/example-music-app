@@ -1,8 +1,8 @@
-const Knex = require("knex");
+import Knex from "knex";
 
-require("dotenv").config();
+require("dotenv").config({ path: "./.env" });
 
-const knexfile = require("../src/db/knexfile");
+import knexfile from "../src/db/knexfile";
 
 const migrateDatabase = async () => {
   const knex = Knex(knexfile);
