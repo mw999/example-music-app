@@ -50,7 +50,7 @@ describe("GET_ALBUM", () => {
         name: "yeezus",
         artist: {
           id: expect.any(Number),
-          name: "Kanye West",
+          name: "Kendrick",
         },
         genre: {
           id: expect.any(Number),
