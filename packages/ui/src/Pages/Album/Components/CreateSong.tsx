@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useMutation, gql } from "@apollo/client";
 
 import SongDetails from "./SongDetails";

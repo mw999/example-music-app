@@ -1,3 +1,4 @@
+import React from "react";
 import { test, vi, expect } from "vitest";
 import { MockedProvider } from "@apollo/client/testing";
 import { render, fireEvent } from "@testing-library/react";

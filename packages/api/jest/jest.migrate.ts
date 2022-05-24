@@ -1,6 +1,7 @@
 import Knex from "knex";
+import * as dotenv from "dotenv";
 
-require("dotenv").config({ path: "./.env" });
+dotenv.config({ path: "./.env" });
 
 import knexfile from "../src/db/knexfile";
 

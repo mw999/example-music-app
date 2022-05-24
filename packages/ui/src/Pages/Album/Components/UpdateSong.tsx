@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useMutation, gql } from "@apollo/client";
 
+import type { Song } from "../../../Types/index";
 import { Label, Flex, Button } from "../../../Components/index";
 import SongDetails from "./SongDetails";
 
@@ -12,7 +13,11 @@ const UPDATE_SONG = gql`
   }
 `;
 
-const CreateSong = ({ song }) => {
+type Props = {
+  song: Song
+};
+
+const CreateSong = ({ song }: Props) => {
   const [editing, setEditing] = useState(false);
 
   const [updateSong] = useMutation(UPDATE_SONG, {

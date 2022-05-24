@@ -2,7 +2,7 @@ import React from "react";
 import { useQuery, gql } from "@apollo/client";
 
 import { Select, Option } from "./DesignSystem/index";
-import { Genre } from "../Types/idnex";
+import { Genre, Select as SelectType } from "../Types/idnex";
 
 const GET_GENRES = gql`
   query GetGenres {
@@ -13,7 +13,7 @@ const GET_GENRES = gql`
   }
 `;
 
-const GenreSelect = (props: React.SelectHTMLAttributes<HTMLSelectElement>) => {
+const GenreSelect = (props: SelectType) => {
   const query = useQuery(GET_GENRES);
 
   return (
