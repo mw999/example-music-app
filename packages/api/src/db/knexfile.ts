@@ -1,6 +1,7 @@
 import type { Knex } from "knex";
+import * as dotenv from "dotenv";
 
-require("dotenv").config({ path: "../../.env" });
+dotenv.config({ path: "../../.env" });
 
 const standard: Knex.StaticConnectionConfig = {
   timezone: "+00:00",

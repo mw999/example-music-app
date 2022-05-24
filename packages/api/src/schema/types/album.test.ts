@@ -1,4 +1,4 @@
-import { Model, PartialModelGraph } from "objection";
+import { PartialModelGraph } from "objection";
 
 import { setupTestApi } from "../../setupTestApi";
 import { Album } from "../../db/index";
@@ -138,7 +138,7 @@ describe("CREATE_ALBUM", () => {
   `;
 
   test("can create an album", async () => {
-    const result = await server.executeOperation({
+    await server.executeOperation({
       query: CREATE_ALBUM,
       variables: {
         name: "my new album",
