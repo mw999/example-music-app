@@ -43,6 +43,7 @@ const resolvers = {
       context: context,
       params: { id: number }
     ): QueryBuilder<Album, Album> => {
+      // This is a change that doesn't break ci.
       return Album.query().findById(params.id).throwIfNotFound();
     },
     albums: (): QueryBuilder<Album, Album[]> => {
